@@ -1,0 +1,8 @@
+prefix=/home/zk/Robotics/Assignment/sudoku_bot_ws/install
+
+Name: move_arm_joints
+Description: Description of move_arm_joints
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+move_arm_joints
+-DCATKIN_DEVEL_PREFIX=/home/zk/Robotics/Assignment/sudoku_bot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/zk/Robotics/Assignment/sudoku_bot_ws/install -G Unix Makefiles
