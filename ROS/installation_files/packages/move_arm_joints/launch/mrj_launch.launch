@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="arm_shoulder_pan_joint_exec" pkg="move_arm_joints" type="arm_shoulder_pan_joint_exec" output="screen" cwd="node"/>
+	<node name="arm_shoulder_lift_joint_exec" pkg="move_arm_joints" type="arm_shoulder_lift_joint_exec" output="screen" cwd="node"/>
+	<node name="arm_elbow_flex_joint_exec" pkg="move_arm_joints" type="arm_elbow_flex_joint_exec" output="screen" cwd="node"/>
+	<node name="arm_wrist_flex_joint_exec" pkg="move_arm_joints" type="arm_wrist_flex_joint_exec" output="screen" cwd="node"/>
+	<node name="gripper_joint_exec" pkg="move_arm_joints" type="gripper_joint_exec" output="screen" cwd="node"/>
+</launch>

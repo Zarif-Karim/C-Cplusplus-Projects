@@ -8,8 +8,8 @@ project(move_arm_joints)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  message_runtime
   message_generation
+  message_runtime
   roscpp
   std_msgs
 )
@@ -70,10 +70,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
  generate_messages(
    DEPENDENCIES
-   std_msgs  # Or other packages containing msgs
+   std_msgs
  )
 
-###############################################
+################################################
 ## Declare ROS dynamic reconfigure parameters ##
 ################################################
 
@@ -105,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES move_arm_joints
-#  CATKIN_DEPENDS other_catkin_pkg
+#  CATKIN_DEPENDS message_generation message_runtime roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -117,7 +117,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
 # include
-# ${catkin_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -133,7 +133,11 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/move_arm_joints_node.cpp)
+add_executable(arm_shoulder_pan_joint_exec src/arm_shoulder_pan_joint_node.cpp)
+add_executable(arm_elbow_flex_joint_exec src/arm_elbow_flex_joint_node.cpp)
+add_executable(arm_wrist_flex_joint_exec src/arm_wrist_flex_joint_node.cpp)
+add_executable(arm_shoulder_lift_joint_exec src/arm_shoulder_lift_joint_node.cpp)
+add_executable(gripper_joint_exec src/gripper_joint_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -146,9 +150,11 @@ include_directories(
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(arm_shoulder_pan_joint_exec ${catkin_LIBRARIES})
+target_link_libraries(arm_elbow_flex_joint_exec ${catkin_LIBRARIES})
+target_link_libraries(arm_wrist_flex_joint_exec ${catkin_LIBRARIES})
+target_link_libraries(arm_shoulder_lift_joint_exec ${catkin_LIBRARIES})
+target_link_libraries(gripper_joint_exec ${catkin_LIBRARIES})
 
 #############
 ## Install ##
