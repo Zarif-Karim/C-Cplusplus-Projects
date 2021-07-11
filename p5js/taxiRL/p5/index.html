@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    <!-- <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script> -->
+    <!-- JavaScript Bundle with Popper -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="utils.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    <main>
+        <div class="w3-container">
+            <div class="w3-container w3-green w3-cell" id="info-container">
+              <p><b>Score: </b><span id="score-container">0</span></p>
+              <p><b>Speed: </b><span id="speed-container">0</span></p>
+              <button class="w3-button w3-ripple w3-blue" id="start_stop_btn">Start</button>
+              <button class="w3-button w3-ripple w3-red" id="reset_btn">Reset</button>
+            </div>
+
+            <div class="w3-container w3-orange w3-cell w3-padding" id="canvas-container">
+                <!-- snake canvas goes here -->
+            </div>
+        </div>
+    </main>
+  </body>
+</html>
